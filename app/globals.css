@@ -40,3 +40,65 @@
     transform: translateY(0);
   }
 }
+
+/* Match Component CSS*/
+.match-table {
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 300px; /* Adjust width as needed */
+  margin: 0;
+  background: #fff;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.flag {
+  width: 20px; /* Adjust size as needed */
+  height: auto;
+  margin-right: 5px;
+}
+
+.player-name {
+  font-size: 14px;
+  color: #333;
+  flex-grow: 1;
+}
+
+.score {
+  font-size: 14px;
+  color: #333;
+  padding: 0 5px;
+}
+
+.winner .player-name {
+  font-weight: bold;
+}
+
+.winner .score {
+  font-weight: bold;
+}
+
+/* Add styles for the serve and win icons if they are included in your JSX */
+.serve-icon,
+.win-icon {
+  margin-right: 5px;
+}
+
+/* You may need to adjust paths to your SVGs */
+.serve-icon svg,
+.win-icon svg {
+  width: 10px; /* Adjust size as needed */
+  height: auto;
+}
+
+/* Style for the tick mark indicating the winner */
+.win-icon {
+  color: green; /* Adjust color as needed */
+}
+
+/* Additional styles for responsiveness or specific behaviors can be added here */
