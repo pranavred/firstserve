@@ -6,17 +6,6 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { SupabaseClient } from "@supabase/supabase-js";
 import { createClient } from "@supabase/supabase-js";
 
-
-const showMatches = async () => {
-
-    
-let { data: matches, error } = await supabase 
-.from('matches')
-.select('*')
-
-
-}
-
 const matchData = {
     teamA: {
       name: 'J. Lohoff / C. Perrin',
