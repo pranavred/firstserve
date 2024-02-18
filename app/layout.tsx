@@ -1,5 +1,8 @@
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Navbar } from "@/components/Navbar";
+
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -11,6 +14,8 @@ export const metadata = {
   description: "The fastest way to build apps with Next.js and Supabase",
 };
 
+//Might have to remove body and change classname for main. 
+
 export default function RootLayout({
   children,
 }: {
@@ -18,10 +23,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={GeistSans.className}>
-      <body className="bg-background text-foreground">
-        <main className="min-h-screen flex flex-col items-center">
+      <body>
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Navbar />
           {children}
-        </main>
+          </ThemeProvider>
+       
       </body>
     </html>
   );
