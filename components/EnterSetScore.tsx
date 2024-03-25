@@ -67,6 +67,18 @@ export default function Page() {
       fetchPlayers(); // Fetch players when component mounts
     }, []);
   
+    const addScore = async (matchId: string, setId: string, setNumber: string, playerA: string, playerB: string, playerAScore: string, playerBScore: string, playerC: string, playerD: string, playerCScore: string, playerDScore: string) => {
+      const { data, error } = await supabase
+        .from('scores')
+        .insert([
+          { match_id: matchId, set_number: setNumber, teamA_score: teamAScore, teamB_score: teamBScore },
+        ]);
+      if (error) {
+        throw error;
+      }
+      return data;
+    };
+
     const handleSubmit = async (event: React.FormEvent) => {
       event.preventDefault();
       await addScore(matchId, setId, setNumber, playerA, playerB, playerAScore, playerBScore, playerC, playerD, playerCScore, playerDScore);
